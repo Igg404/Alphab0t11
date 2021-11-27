@@ -1867,7 +1867,7 @@ if (asd.presences) {
                         getReason = off.getAfkReason(getId, _off)
                         getTime = Date.now() - off.getAfkTime(getId, _off)
                         heheh = ms(getTime)
-                        alpha.sendMessage(from, `@${ment.split('@')[0]} sedang AFK\n\n*Reason :* ${getReason}\n*Sejak :* ${heheh.hours} jam, ${heheh.minutes} menit, ${heheh.seconds} detik yg lalu\n`,text, {contextInfo:{mentionedJid: [ment]}})
+                        alpha.sendMessage(from, `Maaf pengguna nomor ${ment.split('@')[0]} sedang AFK\n\n*Reason :* ${getReason}\n*Sejak :* ${heheh.hours} jam, ${heheh.minutes} menit, ${heheh.seconds} detik yg lalu\n`,text, {quoted: mek})
                        // alpha.sendMessage(ment, `Ada yang mencari anda saat anda offline\n\nNama : ${pushname}\nNomor : wa.me/${sender.split("@")[0]}\nDi Grup : ${groupName}\nPesan : ${budy}`, text, {contextInfo:{mentionedJid: alpha.parseMention(budy)}})
                     }
                 }
@@ -4213,12 +4213,12 @@ break
 if (!isGroup) return reply(lang.onlygc())
 					if (!isGroupAdmins) return reply(lang.onlygcAdmin())
 					if (!isBotGroupAdmins) return reply(lang.botNotAdm())
-              if (args[0].toLowerCase() === 'on'){
+              if (args[0] == 'on'){
               if (isAntiLink) return reply(lang.anjawaUdhOn(command))
               antilink.push(from)
               fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
               reply(lang.anjawaOn(command))
-              } else if (args[0].toLowerCase() === 'off'){
+              } else if (args[0] == 'off'){
               let anu = antilink.indexOf(from)
               antilink.splice(anu, 1)
               fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
