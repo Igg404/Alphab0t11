@@ -1,10 +1,10 @@
 {
     "self_mode": false,
-	"autobio": false,
+	"autobio": true,
 	"antihidetag": true,
 	"user_register": false,
 	"anti_delete" : false,
-	"anticall": false,
+	"anticall": true,
 	"prefix": ".",
 	"language":"ind",
 	"ownerNumber": "6285540666040",
